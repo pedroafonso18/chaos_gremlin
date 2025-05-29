@@ -1,5 +1,5 @@
 #define MATE_IMPLEMENTATION
-#include "mate.h"
+#include "../include/mate.h"
 
 i32 main(void) {
   StartBuild();
