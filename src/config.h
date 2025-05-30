@@ -1,10 +1,16 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+#include <stdlib.h>
 #include "../include/toml.h"
 
+Main read_config();
+
 typedef struct {
-    Goblin goblin;
+    Gremlin gremlin;
     Database database;
     Machine machine;
 } Main;
@@ -29,8 +35,8 @@ typedef struct {
     const char* ip;
     const char* user;
     const char* password;
-    int docker;
     const char* level;
+    int docker;
 } Machine;
 
 #endif
