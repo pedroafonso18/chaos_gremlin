@@ -1,10 +1,13 @@
+#include "config.h"
+
+
 static void error(const char* msg, const char* msg1)
 {
     fprintf(stderr, "ERROR: %s%s\n", msg, msg1?msg1:"");
     exit(1);
 }
 
-Main read_config() {
+Main* read_config() {
     FILE* fp;
     char errbuf[200];
 
@@ -20,7 +23,7 @@ Main read_config() {
         error("Cannot parse - ", errbuf);
     }
 
-    Main main = malloc(sizeof(Main));
+    Main* main = malloc(sizeof(Main));
     if (!main) {
         error("Failed to allocate memory for main config", NULL);
     }

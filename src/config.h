@@ -5,15 +5,8 @@
 #include <string.h>
 #include <errno.h>
 #include <stdlib.h>
+
 #include "../include/toml.h"
-
-Main read_config();
-
-typedef struct {
-    Gremlin gremlin;
-    Database database;
-    Machine machine;
-} Main;
 
 typedef struct {
     int enabled;
@@ -21,7 +14,7 @@ typedef struct {
     int is_safe;
     const char* level;
     const char* crontab;
-} Goblin;
+} Gremlin;
 
 typedef struct {
     const char* host;
@@ -38,5 +31,13 @@ typedef struct {
     const char* level;
     int docker;
 } Machine;
+
+typedef struct {
+    Gremlin gremlin;
+    Database database;
+    Machine machine;
+} Main;
+
+Main* read_config();
 
 #endif
